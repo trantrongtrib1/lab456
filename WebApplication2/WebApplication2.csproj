@@ -196,16 +196,44 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006080220177_InitialModel.cs" />
+    <Compile Include="Migrations\202006080220177_InitialModel.Designer.cs">
+      <DependentUpon>202006080220177_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006080231288_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202006080231288_CreateTableCourse.Designer.cs">
+      <DependentUpon>202006080231288_CreateTableCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006080232010_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202006080232010_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202006080232010_PopulateCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006080430170_AddNameColumnToApplicationUser.cs" />
+    <Compile Include="Migrations\202006080430170_AddNameColumnToApplicationUser.Designer.cs">
+      <DependentUpon>202006080430170_AddNameColumnToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006080435073_1.cs" />
+    <Compile Include="Migrations\202006080435073_1.Designer.cs">
+      <DependentUpon>202006080435073_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\FutureDate.cs" />
+    <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -264,7 +292,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,6 +304,23 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006080220177_InitialModel.resx">
+      <DependentUpon>202006080220177_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006080231288_CreateTableCourse.resx">
+      <DependentUpon>202006080231288_CreateTableCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006080232010_PopulateCategoryTable.resx">
+      <DependentUpon>202006080232010_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006080430170_AddNameColumnToApplicationUser.resx">
+      <DependentUpon>202006080430170_AddNameColumnToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006080435073_1.resx">
+      <DependentUpon>202006080435073_1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
