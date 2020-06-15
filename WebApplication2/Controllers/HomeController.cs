@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Models;
 using System.Data.Entity;
+using WebApplication2.ViewModels;
 
 namespace WebApplication2.Controllers
 {
@@ -22,7 +23,14 @@ namespace WebApplication2.Controllers
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
 
-            return View(upcommingCourses);
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+
+
+            return View(viewModel);
         }
 
         public ActionResult About()
